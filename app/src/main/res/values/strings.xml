@@ -1,0 +1,31 @@
+<resources>
+  <string name="app_name">AndroidCleanArchMVVM_Gson</string>
+  <string name="loading">Loading…</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="splash">Splash</string>
+  <string name="create_your_avercare_account">Create your AverCare account</string>
+  <string name="sign_up_text">Sign up to unlock tailored wellness insights.</string>
+  <string name="email">Email</string>
+  <string name="password">Password</string>
+  <string name="sign_up">Sign Up</string>
+  <string name="or">or</string>
+  <string name="sign_up_with_google">Sign up with Google</string>
+  <string name="already_have_account">Already have an account? Log in</string>
+  <string name="login">Log in</string>
+  <string name="welcome_back">Welcome back</string>
+  <string name="signing_to_your_account">Sign in to your AverCare account.</string>
+  <string name="log_in">Log In</string>
+  <string name="dont_have_account">Don’t have an account? Sign up</string>
+  <string name="signup">Sign up</string>
+  <string name="enter_email_address">Enter Email Address\n</string>
+
+  <string name="please_enter_email_address">Please enter email address</string>
+  <string name="please_enter_valid_email_address">Please enter valid email address</string>
+
+  <string name="please_enter_password">Please enter password</string>
+  <string name="please_confirm_enter_password">Please enter confirm password</string>
+  <string name="please_enter_valid_password">Password must be at least 8 characters long and include letters numbers and symbols.</string>
+  <string name="create_confirm_not_match">Confirm password does\'t match.</string>
+
+</resources>
