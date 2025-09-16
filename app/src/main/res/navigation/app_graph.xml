@@ -2,11 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.cleanarchitecture.presentation.auth.onboarding.OnBoardingFragment"
+        android:label="OnBoardingFragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onBoarding_to_signup"
+            app:destination="@id/signupFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cleanarchitecture.presentation.auth.LoginFragment"
+        android:name="com.example.cleanarchitecture.presentation.auth.login.LoginFragment"
         android:label="Login">
         <action
             android:id="@+id/action_login_to_signup"
@@ -18,11 +30,16 @@
 
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.cleanarchitecture.presentation.auth.SignupFragment"
-        android:label="Sign Up" />
+        android:name="com.example.cleanarchitecture.presentation.auth.signup.SignupFragment"
+        android:label="Sign Up">
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/exampleFragment"
         android:name="com.example.cleanarchitecture.presentation.example.ExampleFragment"
         android:label="Example"/>
+
 </navigation>
