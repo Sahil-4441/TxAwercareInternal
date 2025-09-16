@@ -7,71 +7,74 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:layout_height="match_parent"
+            android:background="@color/app_bg"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:paddingVertical="@dimen/_20sdp"
-            android:paddingHorizontal="@dimen/_15sdp">
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <ScrollView
                 android:id="@+id/scroll_main"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:layout_marginVertical="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/tv_dont_have_account">
 
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:cardBackgroundColor="@color/darkGreyColor">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/_12sdp"
-                    android:paddingVertical="@dimen/_25sdp"
+                    android:layout_marginHorizontal="@dimen/_14sdp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:background="@drawable/app_rounded_black_bg">
+                    app:layout_constraintEnd_toEndOf="parent">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_logo"
                         android:layout_width="@dimen/_70sdp"
                         android:src="@drawable/ic_logo"
                         android:layout_height="@dimen/_70sdp"
-                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_main_heading"
-                        style="@style/customTvSemiBold"
+                        style="@style/TvFontSemibold"
                         android:textSize="@dimen/_16ssp"
                         android:layout_marginTop="@dimen/_20sdp"
                         app:layout_constraintTop_toBottomOf="@+id/img_logo"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/img_logo"
+                        app:layout_constraintEnd_toEndOf="@id/img_logo"
                         android:text="@string/welcome_back"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_sub_heading"
                         style="@style/customTextView"
-                        android:paddingHorizontal="@dimen/_45sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginHorizontal="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
                         app:layout_constraintTop_toBottomOf="@+id/tv_main_heading"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_main_heading"
+                        app:layout_constraintEnd_toEndOf="@id/tv_main_heading"
                         android:text="@string/signing_to_your_account"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_email"
-                        style="@style/customTvSemiBold"
+                        style="@style/TvFontSemibold"
                         android:textColor="@color/secondaryTextColor"
                         android:layout_marginTop="@dimen/_20sdp"
                         app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading"
@@ -82,6 +85,7 @@
                         android:id="@+id/et_email"
                         style="@style/customEt"
                         android:hint="@string/email"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:inputType="textEmailAddress"
                         app:layout_constraintTop_toBottomOf="@+id/tv_email"
                         app:layout_constraintStart_toStartOf="@id/tv_email"
@@ -89,12 +93,12 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_password"
-                        style="@style/customTvSemiBold"
+                        style="@style/TvFontSemibold"
                         android:textSize="@dimen/_12ssp"
                         android:textColor="@color/secondaryTextColor"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
                         app:layout_constraintTop_toBottomOf="@+id/et_email"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/et_email"
                         android:text="@string/password"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -112,7 +116,7 @@
                         app:helperTextTextColor="@color/primaryEtTextColor"
                         app:layout_constraintTop_toBottomOf="@+id/tv_password"
                         app:layout_constraintStart_toStartOf="@id/tv_password"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintEnd_toEndOf="@id/et_email">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_password"
@@ -124,23 +128,23 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_forgot_password"
-                        style="@style/customTvSemiBold"
-                        android:textSize="@dimen/_12ssp"
+                        style="@style/customTextView"
                         android:textColor="@color/secondaryTextColor"
                         android:layout_marginTop="@dimen/_5sdp"
                         app:layout_constraintTop_toBottomOf="@+id/password_layout"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/et_email"
                         android:text="@string/forgot_password"/>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_btn_layout"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:background="@drawable/common__btn_bg"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:background="@drawable/common_btn_bg"
+                        app:layout_constraintEnd_toEndOf="@+id/password_layout"
+                        app:layout_constraintStart_toStartOf="@+id/password_layout"
                         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password">
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -159,10 +163,9 @@
                         android:layout_height="@dimen/_1sdp"
                         android:background="@color/borderColor"
                         app:layout_constraintEnd_toStartOf="@+id/tv_or"
-                        app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginVertical="@dimen/_25sdp"
+                        app:layout_constraintStart_toStartOf="@id/cl_btn_layout"
+                        android:layout_marginTop="@dimen/_24sdp"
                         app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout"/>
-
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_or"
@@ -181,8 +184,8 @@
                         android:layout_height="@dimen/_1sdp"
                         android:background="@color/borderColor"
                         app:layout_constraintStart_toEndOf="@+id/tv_or"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginVertical="@dimen/_25sdp"
+                        app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
+                        android:layout_marginTop="@dimen/_24sdp"
                         app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout"/>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -190,8 +193,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@drawable/common_btn_black_bg"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/cl_btn_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
                         app:layout_constraintTop_toBottomOf="@+id/tv_or">
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -205,8 +208,9 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
             </ScrollView>
 
@@ -215,16 +219,12 @@
                 android:id="@+id/tv_dont_have_account"
                 style="@style/customTextView"
                 android:textColor="@color/secondaryTextColor"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
-                app:layout_constraintTop_toBottomOf="@+id/scroll_main"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="@string/dont_have_account"/>
+                android:layout_marginBottom="@dimen/_30sdp"
+                app:layout_constraintStart_toStartOf="@id/scroll_main"
+                app:layout_constraintEnd_toEndOf="@id/scroll_main"
+                android:text="@string/dont_have_account"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </layout>

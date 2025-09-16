@@ -24,8 +24,8 @@
             android:id="@+id/action_login_to_signup"
             app:destination="@id/signupFragment" />
         <action
-            android:id="@+id/action_login_to_example"
-            app:destination="@id/exampleFragment" />
+            android:id="@+id/action_loginFragment_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
     </fragment>
 
     <fragment
@@ -38,8 +38,16 @@
     </fragment>
 
     <fragment
-        android:id="@+id/exampleFragment"
-        android:name="com.example.cleanarchitecture.presentation.example.ExampleFragment"
-        android:label="Example"/>
+        android:id="@+id/forgotPassword"
+        android:name="com.example.avercare.presentation.forgotpasswod.ForgotPassword"
+        android:label="ForgotPassword" >
+        <action
+            android:id="@+id/action_forgotPassword_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.avercare.presentation.resetpassword.ResetPasswordFragment"
+        android:label="ResetPasswordFragment" />
 
 </navigation>

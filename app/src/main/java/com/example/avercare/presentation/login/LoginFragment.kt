@@ -22,6 +22,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         super.onViewCreated(view, savedInstanceState)
         observable()
         setStyling()
+        clickListeners()
+    }
+
+    private fun clickListeners() {
+        binding.tvForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPassword)
+        }
     }
 
     private fun setStyling() {
