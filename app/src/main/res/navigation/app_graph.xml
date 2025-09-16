@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.cleanarchitecture.presentation.auth.onboarding.OnBoardingFragment"
+        android:name="com.example.avercare.presentation.onboarding.OnBoardingFragment"
         android:label="OnBoardingFragment" >
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cleanarchitecture.presentation.auth.login.LoginFragment"
+        android:name="com.example.avercare.presentation.login.LoginFragment"
         android:label="Login">
         <action
             android:id="@+id/action_login_to_signup"
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.cleanarchitecture.presentation.auth.signup.SignupFragment"
+        android:name="com.example.avercare.presentation.signup.SignupFragment"
         android:label="Sign Up">
         <action
             android:id="@+id/action_signup_to_login"

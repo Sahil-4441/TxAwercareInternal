@@ -1,20 +1,15 @@
-package com.example.cleanarchitecture.presentation.auth.signup
+package com.example.avercare.presentation.signup
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.cleanarchitecture.R
-import com.example.cleanarchitecture.core.base.BaseFragment
-import com.example.cleanarchitecture.core.util.setSpannableText
-import com.example.cleanarchitecture.databinding.FragmentSignupBinding
+import com.example.avercare.R
+import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.databinding.FragmentSignupBinding
+import com.example.avercare.core.util.setSpannableText
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
-import kotlin.getValue
 
 @AndroidEntryPoint
 class SignupFragment : BaseFragment<FragmentSignupBinding>() {

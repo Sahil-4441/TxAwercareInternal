@@ -1,4 +1,4 @@
-package com.example.cleanarchitecture.core.util
+package com.example.avercare.core.util
 
 import android.content.Context
 import android.text.SpannableString

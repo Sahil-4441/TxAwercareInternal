@@ -1,16 +1,14 @@
-package com.example.cleanarchitecture.presentation.auth.onboarding
+package com.example.avercare.presentation.onboarding
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.cleanarchitecture.R
-import com.example.cleanarchitecture.core.base.BaseFragment
-import com.example.cleanarchitecture.core.util.setSpannableText
-import com.example.cleanarchitecture.databinding.FragmentOnBoardingBinding
-import com.example.cleanarchitecture.databinding.FragmentSignupBinding
+import com.example.avercare.R
+import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.databinding.FragmentOnBoardingBinding
+import com.example.avercare.core.util.setSpannableText
 
 class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
 
