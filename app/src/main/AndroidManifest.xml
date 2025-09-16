@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="false"
-        android:name="com.example.cleanarchitecture.MyApp"
+        android:name="com.example.avercare.MyApp"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

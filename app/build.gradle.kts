@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cleanarchitecture"
+    namespace = "com.example.avercare"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.cleanarchitecture"
+        applicationId = "com.example.avercare"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

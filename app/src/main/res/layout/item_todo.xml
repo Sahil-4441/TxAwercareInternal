@@ -3,7 +3,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.cleanarchitecture.domain.model.Todo" />
+            type="com.example.avercare.domain.model.Todo" />
     </data>
 
     <LinearLayout
