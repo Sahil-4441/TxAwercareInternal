@@ -8,15 +8,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseAdapter<T, DB : ViewDataBinding> : RecyclerView.Adapter<BaseViewHolder>() {
+abstract class BaseAdapter<DB : ViewDataBinding> : RecyclerView.Adapter<BaseViewHolder>() {
     open lateinit var binding: DB
-    private var items = emptyList<T>()
 
     private var itemClickListener: OnItemClick? = null
 
     @LayoutRes
     abstract fun getLayoutRes(): Int
-    abstract fun onBind(binding : DB, item : T, position: Int)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -29,31 +27,13 @@ abstract class BaseAdapter<T, DB : ViewDataBinding> : RecyclerView.Adapter<BaseV
         return BaseViewHolder(binding)
     }
 
-    override fun getItemCount(): Int  = items.size
+    override fun getItemCount(): Int {
+        return 0
+    }
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-        onBind(binding, items[position], position)
     }
 
-    fun submitList(newItems: List<T>) {
-        val diffCallback = object : DiffUtil.Callback() {
-            override fun getOldListSize() = items.size
-            override fun getNewListSize() = newItems.size
-
-            override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean {
-                // TODO: adjust according to your model (e.g., compare IDs)
-                return items[oldPos] == newItems[newPos]
-            }
-
-            override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean {
-                return items[oldPos] == newItems[newPos]
-            }
-        }
-
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        items = newItems
-        diffResult.dispatchUpdatesTo(this)
-    }
 
     interface OnItemClick {
         fun onItemClick(vararg items: Any)

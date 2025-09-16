@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/verificationFragment">
 
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.avercare.presentation.onboarding.OnBoardingFragment"
-        android:label="OnBoardingFragment" >
+        android:label="OnBoardingFragment">
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -23,9 +23,7 @@
         <action
             android:id="@+id/action_login_to_signup"
             app:destination="@id/signupFragment" />
-        <action
-            android:id="@+id/action_login_to_example"
-            app:destination="@id/exampleFragment" />
+
     </fragment>
 
     <fragment
@@ -38,8 +36,22 @@
     </fragment>
 
     <fragment
-        android:id="@+id/exampleFragment"
-        android:name="com.example.cleanarchitecture.presentation.example.ExampleFragment"
-        android:label="Example"/>
+        android:id="@+id/verificationFragment"
+        android:name="com.example.avercare.presentation.verification.VerificationFragment"
+        android:label="VerificationFragment">
+        <action
+            android:id="@+id/action_verificationFragment_to_verifyOtpFragment"
+            app:destination="@id/verifyOtpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyOtpFragment"
+        android:name="com.example.avercare.presentation.verifyOtp.VerifyOtpFragment"
+        android:label="VerifyOtpFragment" />
 
 </navigation>

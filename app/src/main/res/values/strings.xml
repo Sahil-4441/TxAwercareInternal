@@ -31,5 +31,21 @@
     <string name="please_confirm_enter_password">Please enter confirm password</string>
     <string name="please_enter_valid_password">Password must be at least 8 characters long and include letters numbers and symbols.</string>
     <string name="create_confirm_not_match">Confirm password does\'t match.</string>
+    <string name="verify_your_email">Verify your Email</string>
+    <string name="enter_6_digit_code">Enter the 6-digit code we sent to your email for verification. Check your inbox and spam folder.</string>
+    <string name="verify">Verify</string>
+    <string name="didn_t_get_the_code_resend">Didn\'t get the code? Resend in 30 s</string>
+    <string name="your_info_is_encrypted_and_never_shared">Your info is encrypted and never shared.</string>
+    <string name="trouble_contact_support_in_the_app_menu">Trouble? Contact support in the app menu</string>
+    <string name="empty_otp">Please enter OTP.</string>
+    <string name="invalid_otp">Please enter 6 digit OTP.</string>
+    <string name="resend">Resend in 30 s</string>
+    <string name="verification">Verification</string>
+    <string name="for_your_security_choose">For your security, choose a verification method. This helps keep your account safe.</string>
+    <string name="text_message">Text Message</string>
+    <string name="send_a_code_to_your_phone">Send a code to your phone</string>
+    <string name="send_a_code_to_your_email">Send a code to your email</string>
+    <string name="google_authenticator">Google Authenticator</string>
+    <string name="use_your_google_authenticator_app">Use your Google Authenticator app</string>
 
 </resources>

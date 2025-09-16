@@ -26,6 +26,9 @@
     <color name="borderColor">#1B2732</color>
     <color name="text_color_grey">#999999</color>
     <color name="red">#FF0000</color>
+    <color name="app_bg">#060B0F</color>
+    <color name="very_dark_blue">#101D2A</color>
+    <color name="dark_blue_gray">#25384B</color>
 
 
 </resources>
