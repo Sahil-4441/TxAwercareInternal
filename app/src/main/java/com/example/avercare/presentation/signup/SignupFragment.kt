@@ -34,6 +34,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
         ) {
             findNavController().navigate(R.id.action_signup_to_login)
         }
+
     }
 
     private fun observable() {

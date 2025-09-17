@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/verificationFragment">
+    app:startDestination="@id/onBoardingFragment">
 
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.avercare.presentation.onboarding.OnBoardingFragment"
-        android:label="OnBoardingFragment">
+        android:label="OnBoardingFragment" >
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -23,7 +23,9 @@
         <action
             android:id="@+id/action_login_to_signup"
             app:destination="@id/signupFragment" />
-
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
     </fragment>
 
     <fragment
@@ -36,6 +38,17 @@
     </fragment>
 
     <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.example.avercare.presentation.forgotpasswod.ForgotPassword"
+        android:label="ForgotPassword" >
+        <action
+            android:id="@+id/action_forgotPassword_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.avercare.presentation.resetpassword.ResetPasswordFragment"
+        android:label="ResetPasswordFragment" />
         android:id="@+id/verificationFragment"
         android:name="com.example.avercare.presentation.verification.VerificationFragment"
         android:label="VerificationFragment">
