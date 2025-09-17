@@ -21,6 +21,7 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="terms_service">By continuing, you agree to AverCare\'s Terms of Service and Privacy Policy</string>
     <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
     <string name="submit">Submit</string>
     <string name="let_start">Let\'s Start</string>
     <string name="enter_email_address">Enter Email Address\n</string>
@@ -54,5 +55,8 @@
     <string name="send_a_code_to_your_email">Send a code to your email</string>
     <string name="google_authenticator">Google Authenticator</string>
     <string name="use_your_google_authenticator_app">Use your Google Authenticator app</string>
+    <string name="try_another_mfa_method">Try Another MFA Verification Method</string>
+    <string name="mfa_verification">MFA Verification</string>
+    <string name="terms_and_service">I agree to the Terms of Service and Privacy Policy.</string>
 
 </resources>

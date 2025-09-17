@@ -209,7 +209,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_verify"
-                    style="@style/customButtonWithOutArrow"
+                    style="@style/buttonWithOutArrow"
                     android:text="@string/verify"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

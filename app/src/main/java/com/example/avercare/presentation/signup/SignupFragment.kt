@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.core.content.ContextCompat
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentSignupBinding
-import com.example.avercare.core.util.setSpannableText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,20 +20,43 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        initUI()
         observable()
-        setStyling()
+
     }
 
-    private fun setStyling() {
-        setSpannableText(
-            binding.tvAlreadyHaveAccount,
-            getString(R.string.already_have_account),
-            getString(R.string.login),
-            R.color.primaryColor
-        ) {
-            findNavController().navigate(R.id.action_signup_to_login)
-        }
+    private fun initUI() {
+        binding.tvPrivacyTerms.makeTextLink(
+            resources.getString(R.string.terms_of_service),
+            false,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
+            ),
+            action = {
+
+            })
+        binding.tvPrivacyTerms.makeTextLink(
+            resources.getString(R.string.privacy_policy),
+            false,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
+            ),
+            action = {
+
+            })
+
+        binding.tvAlreadyHaveAccount.makeTextLink(
+            resources.getString(R.string.login),
+            false,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
+            ),
+            action = {
+
+            })
 
     }
 
