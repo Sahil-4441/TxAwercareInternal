@@ -101,10 +101,7 @@ fun EditText.otpHelper() {
 
         }
     })
-
-
 }
-
 fun TextView.makeTextLink(
     str: String,
     underlined: Boolean,
@@ -134,11 +131,9 @@ fun TextView.makeTextLink(
     text = spannableString
     movementMethod = LinkMovementMethod.getInstance()
     highlightColor = Color.TRANSPARENT
-
 }
 
 fun View.hideKeyBoard() {
-
     this.let {
         val imm =
             this.context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?

@@ -39,7 +39,7 @@ class VerifyOtpFragment : BaseFragment<FragmentVerifyOtpBinding>() {
                 R.color.primaryColor
             ),
             action = {
-
+                clearOtp()
             })
     }
 
@@ -69,7 +69,14 @@ class VerifyOtpFragment : BaseFragment<FragmentVerifyOtpBinding>() {
         binding.fourthOtpET.otpHelper()
         binding.fifthOtpET.otpHelper()
         binding.sixOtpET.otpHelper()
+    }
 
+    private fun clearOtp() {
+        binding.firstOtpET.setText("")
+        binding.secondOtpET.setText("")
+        binding.thirdOtpET.setText("")
+        binding.fourthOtpET.setText("")
+        binding.firstOtpET.requestFocus()
     }
 
 }
