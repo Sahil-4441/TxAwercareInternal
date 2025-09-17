@@ -1,57 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/onBoardingFragment">
 
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.avercare.presentation.onboarding.OnBoardingFragment"
-        android:label="OnBoardingFragment" >
+        android:label="OnBoardingFragment"
+        tools:layout="@layout/fragment_on_boarding">
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_onBoarding_to_signup"
-            app:destination="@id/signupFragment" />
+            app:destination="@id/signupFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.avercare.presentation.login.LoginFragment"
-        android:label="Login">
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_signup"
-            app:destination="@id/signupFragment" />
+            app:destination="@id/signupFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_loginFragment_to_forgotPassword"
-            app:destination="@id/forgotPassword" />
+            app:destination="@id/forgotPassword"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.example.avercare.presentation.signup.SignupFragment"
-        android:label="Sign Up">
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_signup">
         <action
             android:id="@+id/action_signup_to_login"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/forgotPassword"
         android:name="com.example.avercare.presentation.forgotpasswod.ForgotPassword"
-        android:label="ForgotPassword" >
+        android:label="ForgotPassword"
+        tools:layout="@layout/fragment_forgot_password">
         <action
             android:id="@+id/action_forgotPassword_to_resetPasswordFragment"
-            app:destination="@id/resetPasswordFragment" />
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.example.avercare.presentation.resetpassword.ResetPasswordFragment"
-        android:label="ResetPasswordFragment" />
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/fragment_reset_password" />
+
+    <fragment
         android:id="@+id/verificationFragment"
         android:name="com.example.avercare.presentation.verification.VerificationFragment"
-        android:label="VerificationFragment">
+        android:label="VerificationFragment"
+        tools:layout="@layout/fragment_verification">
         <action
             android:id="@+id/action_verificationFragment_to_verifyOtpFragment"
             app:destination="@id/verifyOtpFragment"
@@ -59,12 +93,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-
     </fragment>
 
     <fragment
         android:id="@+id/verifyOtpFragment"
         android:name="com.example.avercare.presentation.verifyOtp.VerifyOtpFragment"
-        android:label="VerifyOtpFragment" />
+        android:label="VerifyOtpFragment"
+        tools:layout="@layout/fragment_verify_otp" />
 
 </navigation>
