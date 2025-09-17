@@ -30,10 +30,16 @@
 
     <string name="please_enter_password">Please enter password</string>
     <string name="please_confirm_enter_password">Please enter confirm password</string>
-    <string name="please_enter_valid_password">Password must be at least 8 characters long and include letters numbers and symbols.</string>
+    <string name="password_is_required">Password is required</string>
+    <string name="email_is_required">Email is required</string>
+    <string name="please_enter_a_valid_email">Please enter a valid email</string>
+    <string name="confirm_password_is_required">Confirm password is required</string>
+    <string name="please_agree_terms_of_service">Please agree to our terms of condition and privacy policy.</string>
+    <string name="please_enter_valid_password">Password must be 8+ characters with letters, numbers, and symbols.</string>
     <string name="create_confirm_not_match">Confirm password does\'t match.</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="forgot_your_pass">Forgot your password?</string>
+    <string name="password_not_match">Password does not match</string>
     <string name="enter_your_mail">Enter your email</string>
     <string name="reset_your_password">Reset your password?</string>
     <string name="create_new_password">Create new password</string>

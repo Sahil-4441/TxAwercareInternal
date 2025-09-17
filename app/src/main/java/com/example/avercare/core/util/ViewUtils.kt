@@ -18,6 +18,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import com.example.avercare.R
 import kotlin.text.indexOf
 
 fun Context.showToast(message: String) {
@@ -89,19 +90,20 @@ fun EditText.otpHelper() {
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             if (s.toString().length == 1) {
-                //  background = ContextCompat.getDrawable(context, R.drawable.custom_box_bg)
+                background = ContextCompat.getDrawable(context, R.drawable.rounded_otp_edt_view)
                 val view = focusSearch(View.FOCUS_RIGHT)
                 view?.let { it.requestFocus() } ?: run {
                     this@otpHelper.hideKeyBoard()
                 }
             } else {
-                //     background = ContextCompat.getDrawable(context, R.drawable.custom_box_bg)
+                background = ContextCompat.getDrawable(context, R.drawable.rounded_otp_edt_view)
 
             }
 
         }
     })
 }
+
 fun TextView.makeTextLink(
     str: String,
     underlined: Boolean,
