@@ -98,14 +98,10 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_email"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/_10sdp"
+                            style="@style/CommonEditTextStyle"
                             android:hint="@string/email"
-                            android:textColor="@color/light_grey_blue"
-                            android:textColorHint="@color/light_grey_blue"
                             android:inputType="textEmailAddress"
-                            android:singleLine="true"/>
+                            android:maxLength="40"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,17 +132,10 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
+                            style="@style/CommonEditTextStyle"
                             android:hint="@string/password"
                             android:inputType="textPassword"
-                            android:maxLines="1"
-                            android:maxLength="20"
-                            android:paddingVertical="@dimen/_10sdp"
-                            android:textColor="@color/blue_grey_light"
-                            android:textColorHint="@color/blue_grey_light"
-                            android:textSize="@dimen/_11ssp"/>
+                            android:maxLength="20"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -174,17 +163,10 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_confirm_password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
+                            style="@style/CommonEditTextStyle"
                             android:hint="@string/confirm_password"
                             android:inputType="textPassword"
-                            android:maxLines="1"
-                            android:maxLength="20"
-                            android:paddingVertical="@dimen/_10sdp"
-                            android:textColor="@color/blue_grey_light"
-                            android:textColorHint="@color/blue_grey_light"
-                            android:textSize="@dimen/_11ssp"/>
+                            android:maxLength="20"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -361,7 +343,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tv_or">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            style="@style/customBlackButton"
+                            style="@style/buttonBlack"
                             android:drawableStart="@drawable/ic_google"
                             android:drawablePadding="@dimen/_8sdp"
                             android:text="@string/sign_up_with_google"

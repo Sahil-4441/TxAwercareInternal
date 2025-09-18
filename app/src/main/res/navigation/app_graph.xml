@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.avercare.presentation.onboarding.OnBoardingFragment"
+        android:name="com.example.avercare.presentation.letstart.LetStartFragment"
         android:label="OnBoardingFragment"
-        tools:layout="@layout/fragment_on_boarding">
+        tools:layout="@layout/fragment_let_start">
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
             app:destination="@id/loginFragment"

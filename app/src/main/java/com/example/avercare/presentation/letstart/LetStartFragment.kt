@@ -1,4 +1,4 @@
-package com.example.avercare.presentation.onboarding
+package com.example.avercare.presentation.letstart
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,14 +9,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.core.util.makeTextLink
-import com.example.avercare.databinding.FragmentOnBoardingBinding
+import com.example.avercare.databinding.FragmentLetStartBinding
 
-class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
+class LetStartFragment : BaseFragment<FragmentLetStartBinding>() {
 
     override fun inflateBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentOnBoardingBinding = FragmentOnBoardingBinding.inflate(inflater, container, false)
+    ): FragmentLetStartBinding = FragmentLetStartBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,7 +34,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
             ),
             action = {
                 findNavController().navigate(
-                    OnBoardingFragmentDirections.actionOnBoardingFragmentToLoginFragment()
+                    LetStartFragmentDirections.actionOnBoardingFragmentToLoginFragment()
                 )
             }
         )
@@ -42,7 +42,7 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
 
     private fun clickListeners() {
         binding.btnStart.setOnClickListener {
-            findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingToSignup())
+            findNavController().navigate(LetStartFragmentDirections.actionOnBoardingToSignup())
         }
     }
 
