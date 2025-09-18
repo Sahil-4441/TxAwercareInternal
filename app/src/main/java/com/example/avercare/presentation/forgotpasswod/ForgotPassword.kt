@@ -8,8 +8,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.databinding.FragmentForgotPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ForgotPassword : BaseFragment<FragmentForgotPasswordBinding>() {
 
     override fun inflateBinding(
