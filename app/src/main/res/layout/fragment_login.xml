@@ -103,15 +103,13 @@
                             android:hint="@string/email"
                             android:textColor="@color/light_grey_blue"
                             android:textColorHint="@color/light_grey_blue"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"/>
                             android:maxLines="1"
+                            android:maxLength="40"
                             android:textSize="@dimen/_11ssp"
                             android:fontFamily="@font/inter_medium"
                             android:inputType="textEmailAddress"
                             android:paddingVertical="@dimen/_10sdp"
-                            android:textColor="@color/primaryEtTextColor"
-                            android:textColorHint="@color/primaryEtTextColor" />
+                           />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,10 +118,7 @@
                         style="@style/TvFontSemibold"
                         android:textSize="@dimen/_12ssp"
                         android:textColor="@color/blue_grey_light"
-                        app:layout_constraintTop_toBottomOf="@+id/email_layout"
                         android:text="@string/password"
-                        android:textColor="@color/secondaryTextColor"
-                        android:textSize="@dimen/_12ssp"
                         app:layout_constraintStart_toStartOf="@id/email_layout"
                         app:layout_constraintTop_toBottomOf="@+id/email_layout" />
 
@@ -153,9 +148,9 @@
                             android:inputType="textPassword"
                             android:maxLines="1"
                             android:maxLength="20"
+                            android:textColor="@color/blue_grey_light"
                             android:paddingVertical="@dimen/_10sdp"
-                            android:textColor="@color/primaryEtTextColor"
-                            android:textColorHint="@color/primaryEtTextColor"
+                            android:textColorHint="@color/blue_grey_light"
                             android:textSize="@dimen/_11ssp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -165,9 +160,7 @@
                         style="@style/customTextView"
                         android:textColor="@color/blue_grey_light"
                         android:layout_marginTop="@dimen/_6sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/password_layout"
                         android:text="@string/forgot_password"
-                        android:textColor="@color/secondaryTextColor"
                         app:layout_constraintEnd_toEndOf="@id/email_layout"
                         app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
@@ -189,16 +182,11 @@
                         style="@style/TvFontRegular"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_6sdp"
                         android:layout_marginStart="@dimen/_4sdp"
                         android:textColor="@color/steel_blue_grey"
                         android:fontFamily="@font/inter_regular"
                         android:text="@string/terms_and_service"
                         android:textSize="@dimen/_10ssp"
-                        app:layout_constraintBottom_toBottomOf="@+id/checkBox_agree"
-                        app:layout_constraintEnd_toEndOf="@id/tv_forgot_password"
-                        app:layout_constraintStart_toEndOf="@+id/checkBox_agree"
-                        app:layout_constraintTop_toTopOf="@+id/checkBox_agree" />
                         app:layout_constraintBottom_toBottomOf="@+id/cb_terms_privacy"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/cb_terms_privacy"
@@ -231,7 +219,6 @@
                         android:textColor="@color/blue_grey_light"
                         android:layout_marginTop="@dimen/_24sdp"
                         android:text="@string/try_another_mfa_method"
-                        android:textColor="@color/secondaryTextColor"
                         app:layout_constraintEnd_toEndOf="@id/btn_login"
                         app:layout_constraintStart_toStartOf="@+id/btn_login"
                         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
