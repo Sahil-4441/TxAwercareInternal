@@ -29,43 +29,6 @@ fun TextView.isBlank(): Boolean = text.toString().trim().isEmpty()
 
 fun TextView.content(): String = text.toString().trim()
 
-fun setSpannableText(
-    textView: TextView,
-    fullText: String,
-    clickablePart: String,
-    @ColorRes colorRes: Int,
-    onClick: () -> Unit
-) {
-    val spannable = SpannableString(fullText)
-
-    val startIndex = fullText.indexOf(clickablePart)
-    if (startIndex == -1) {
-        textView.text = fullText
-        return
-    }
-    val endIndex = startIndex + clickablePart.length
-
-    // Apply color
-    val colorSpan = ForegroundColorSpan(ContextCompat.getColor(textView.context, colorRes))
-    spannable.setSpan(colorSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-    // Apply clickable
-    val clickableSpan = object : ClickableSpan() {
-        override fun onClick(widget: View) {
-            onClick()
-        }
-
-        override fun updateDrawState(ds: TextPaint) {
-            super.updateDrawState(ds)
-            ds.isUnderlineText = false
-        }
-    }
-    spannable.setSpan(clickableSpan, startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-    textView.text = spannable
-    textView.movementMethod = LinkMovementMethod.getInstance()
-}
-
 fun EditText.otpHelper() {
 
     setOnKeyListener { v, keyCode, event ->

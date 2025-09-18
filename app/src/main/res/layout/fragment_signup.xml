@@ -33,7 +33,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/darkGreyColor"
+                app:cardBackgroundColor="@color/dark_grey_color"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:cardElevation="@dimen/_4sdp">
 
@@ -88,7 +88,7 @@
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/et_email"
-                        style="@style/customEt"
+                        style="@style/edt"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:hint="@string/email"
                         android:inputType="textEmailAddress"
@@ -183,8 +183,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/confirm_password_layout" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/checked_tv_agree"
-                        android:layout_width="0dp"
+                        android:id="@+id/tv_privacy_terms"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_4sdp"
                         android:fontFamily="@font/inter_regular"
@@ -202,13 +202,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_12sdp"
                         android:background="@drawable/common_btn_bg"
-                        app:layout_constraintEnd_toEndOf="@id/confirm_password_layout"
-                        app:layout_constraintStart_toStartOf="@id/confirm_password_layout"
-                        app:layout_constraintTop_toBottomOf="@+id/checked_tv_agree">
+                        app:layout_constraintEnd_toEndOf="@id/tv_privacy_terms"
+                        app:layout_constraintStart_toStartOf="@id/tv_privacy_terms"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_privacy_terms">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/btn_submit"
-                            style="@style/customButtonWithArrow"
+                            style="@style/buttonWithArrow"
                             android:text="@string/sign_up"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +221,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_1sdp"
                         android:layout_marginTop="@dimen/_24sdp"
-                        android:background="@color/borderColor"
+                        android:background="@color/midnight_blue"
                         app:layout_constraintEnd_toStartOf="@+id/tv_or"
                         app:layout_constraintStart_toStartOf="@id/cl_btn_layout"
                         app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout" />
@@ -243,7 +243,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_1sdp"
                         android:layout_marginTop="@dimen/_24sdp"
-                        android:background="@color/borderColor"
+                        android:background="@color/midnight_blue"
                         app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
                         app:layout_constraintStart_toEndOf="@+id/tv_or"
                         app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout" />

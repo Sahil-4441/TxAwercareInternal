@@ -5,14 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.core.util.content
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.core.util.otpHelper
-import com.example.avercare.core.util.setSpannableText
-import com.example.avercare.databinding.FragmentLoginBinding
 import com.example.avercare.databinding.FragmentVerifyOtpBinding
 import dagger.hilt.android.AndroidEntryPoint
 

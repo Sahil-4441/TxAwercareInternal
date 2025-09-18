@@ -76,7 +76,7 @@
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_email"
-                    style="@style/customEt"
+                    style="@style/edt"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +141,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/btn_submit"
-                        style="@style/customButtonWithArrow"
+                        style="@style/buttonWithArrow"
                         android:text="@string/log_in"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +154,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginVertical="@dimen/_25sdp"
-                    android:background="@color/borderColor"
+                    android:background="@color/midnight_blue"
                     app:layout_constraintEnd_toStartOf="@+id/tv_or"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout" />
@@ -176,7 +176,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_1sdp"
                     android:layout_marginVertical="@dimen/_25sdp"
-                    android:background="@color/borderColor"
+                    android:background="@color/midnight_blue"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_or"
                     app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout" />

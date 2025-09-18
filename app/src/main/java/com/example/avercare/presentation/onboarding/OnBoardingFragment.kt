@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentOnBoardingBinding
-import com.example.avercare.core.util.setSpannableText
 
 class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
 
@@ -24,19 +25,24 @@ class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
     }
 
     private fun setStyling() {
-        setSpannableText(
-            binding.tvAlreadyHaveAccount,
-            getString(R.string.already_have_account),
-            getString(R.string.login),
-            R.color.primaryColor
-        ){
-            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
-        }
+        binding.tvAlreadyHaveAccount.makeTextLink(
+            resources.getString(R.string.login),
+            false,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
+            ),
+            action = {
+                findNavController().navigate(
+                    OnBoardingFragmentDirections.actionOnBoardingFragmentToLoginFragment()
+                )
+            }
+        )
     }
 
     private fun clickListeners() {
         binding.btnStart.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoarding_to_signup)
+            findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingToSignup())
         }
     }
 

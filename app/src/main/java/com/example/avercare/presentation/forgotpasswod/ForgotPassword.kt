@@ -27,7 +27,7 @@ class ForgotPassword : BaseFragment<FragmentForgotPasswordBinding>() {
 
     private fun clickListeners() {
         binding.clBtnLayout.setOnClickListener {
-            findNavController().navigate(R.id.action_forgotPassword_to_resetPasswordFragment)
+            findNavController().navigate(ForgotPasswordDirections.actionForgotPasswordToResetPasswordFragment())
         }
     }
 

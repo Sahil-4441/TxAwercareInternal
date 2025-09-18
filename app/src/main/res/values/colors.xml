@@ -21,14 +21,16 @@
     <color name="black">#000000</color>
     <color name="white_100">#E5E7EB</color>
     <color name="transparent">#00000000</color>
-    <color name="darkGreyColor">#0B1722</color>
-    <color name="secondaryDarkGrey">#081119</color>
-    <color name="borderColor">#1B2732</color>
+    <color name="dark_grey_color">#0B1722</color>
+    <color name="secondary_dark_grey">#081119</color>
+    <color name="midnight_blue">#1B2732</color>
     <color name="text_color_grey">#999999</color>
     <color name="red">#FF0000</color>
     <color name="app_bg">#060B0F</color>
     <color name="very_dark_blue">#101D2A</color>
     <color name="dark_blue_gray">#25384B</color>
+    <color name="red_light_color">#FF7073</color>
+    <color name="dark_red_color">#310B12</color>
 
 
 </resources>
