@@ -10,6 +10,8 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.core.util.LoginField
+import com.example.avercare.core.util.SignupField
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentSignupBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +29,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vmSignUp = vmSignUp
+        binding.lifecycleOwner = viewLifecycleOwner
         initUi()
         setClick()
         manageObservers()
@@ -90,16 +93,20 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
     }
 
     private fun setClick() {
-        binding.btnSubmit.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
-            val confirmPassword = binding.etConfirmPassword.text.toString().trim()
-            lifecycleScope.launch {
-                vmSignUp.validateSignUpAccount(
-                    email,
-                    password,
-                    confirmPassword
-                )
+        binding.btnSignUp.setOnClickListener {
+            vmSignUp.validateSignUp()
+
+            if (!vmSignUp.termsConditionChecked) {
+                showError(resources.getString(R.string.please_agree_terms_of_service))
+                return@setOnClickListener
+            }
+
+            if (vmSignUp.isFormValid.value) {
+                val email = vmSignUp.email.value
+                val password = vmSignUp.password.value
+                val confirmPassword = vmSignUp.confirmPassword.value
+                showError("Email: $email\nPassword: $password ConfirmPassword: $confirmPassword")
+                // Navigate to next screen
             }
         }
 
@@ -128,11 +135,21 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
-            vmSignUp.validationError.collectLatest { errorResId ->
-                showError(getString(errorResId))
+            vmSignUp.validationError.collect { error ->
+                when (error?.first) {
+                    SignupField.EMAIL -> binding.emailLayout.error = getString(error.second)
+                    SignupField.PASSWORD -> binding.passwordLayout.error = getString(error.second)
+                    SignupField.CONFIRM_PASSWORD -> binding.confirmPasswordLayout.error =
+                        getString(error.second)
+
+                    null -> {
+                        binding.emailLayout.error = null
+                        binding.passwordLayout.error = null
+                        binding.confirmPasswordLayout.error = null
+                    }
+
+                }
             }
         }
     }
-
-
 }

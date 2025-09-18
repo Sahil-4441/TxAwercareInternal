@@ -4,7 +4,7 @@ import android.widget.CompoundButton
 import androidx.lifecycle.viewModelScope
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseViewModel
-import com.example.avercare.core.util.Field
+import com.example.avercare.core.util.LoginField
 import com.example.avercare.core.util.isValidEmail
 import com.example.avercare.core.util.isValidPassword
 import com.example.avercare.data.remote.Resource
@@ -31,18 +31,18 @@ class LoginViewModel @Inject constructor(
     private val _password = MutableStateFlow("")
     val password: StateFlow<String> = _password
 
-    private val _validationError = MutableStateFlow<Pair<Field, Int>?>(null)
-    val validationError: StateFlow<Pair<Field, Int>?> = _validationError
+    private val _validationError = MutableStateFlow<Pair<LoginField, Int>?>(null)
+    val validationError: StateFlow<Pair<LoginField, Int>?> = _validationError
 
     private val _isFormValid = MutableStateFlow(false)
     val isFormValid: StateFlow<Boolean> = _isFormValid
 
     val emailHasError: StateFlow<Boolean> = _validationError
-        .map { it?.first == Field.EMAIL }
+        .map { it?.first == LoginField.EMAIL }
         .stateIn(viewModelScope, SharingStarted.Lazily, false)
 
     val passwordHasError: StateFlow<Boolean> = _validationError
-        .map { it?.first == Field.PASSWORD }
+        .map { it?.first == LoginField.PASSWORD }
         .stateIn(viewModelScope, SharingStarted.Lazily, false)
 
     var termsConditionChecked = false
@@ -65,24 +65,24 @@ class LoginViewModel @Inject constructor(
     private fun validateEmail() {
         when {
             _email.value.isEmpty() -> _validationError.value =
-                Field.EMAIL to R.string.email_is_required
+                LoginField.EMAIL to R.string.email_is_required
 
             !_email.value.isValidEmail() -> _validationError.value =
-                Field.EMAIL to R.string.please_enter_a_valid_email
+                LoginField.EMAIL to R.string.please_enter_a_valid_email
 
-            else -> if (_validationError.value?.first == Field.EMAIL) _validationError.value = null
+            else -> if (_validationError.value?.first == LoginField.EMAIL) _validationError.value = null
         }
     }
 
     private fun validatePassword() {
         when {
             _password.value.isEmpty() -> _validationError.value =
-                Field.PASSWORD to R.string.password_is_required
+                LoginField.PASSWORD to R.string.password_is_required
 
             !_password.value.isValidPassword() -> _validationError.value =
-                Field.PASSWORD to R.string.please_enter_valid_password
+                LoginField.PASSWORD to R.string.please_enter_valid_password
 
-            else -> if (_validationError.value?.first == Field.PASSWORD) _validationError.value = null
+            else -> if (_validationError.value?.first == LoginField.PASSWORD) _validationError.value = null
         }
     }
 

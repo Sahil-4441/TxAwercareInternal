@@ -1,10 +1,6 @@
 package com.example.avercare.presentation.login
 
-import android.content.res.ColorStateList
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,12 +10,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
-import com.example.avercare.core.util.Field
+import com.example.avercare.core.util.LoginField
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -44,7 +38,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
             // Terms condition check
             if (!vmLogin.termsConditionChecked) {
-               showError(resources.getString(R.string.please_agree_terms_of_service))
+                showError(resources.getString(R.string.please_agree_terms_of_service))
                 return@setOnClickListener
             }
 
@@ -132,8 +126,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         viewLifecycleOwner.lifecycleScope.launch {
             vmLogin.validationError.collect { error ->
                 when (error?.first) {
-                    Field.EMAIL -> binding.emailLayout.error = getString(error.second)
-                    Field.PASSWORD -> binding.passwordLayout.error = getString(error.second)
+                    LoginField.EMAIL -> binding.emailLayout.error = getString(error.second)
+                    LoginField.PASSWORD -> binding.passwordLayout.error = getString(error.second)
                     null -> {
                         binding.emailLayout.error = null
                         binding.passwordLayout.error = null
