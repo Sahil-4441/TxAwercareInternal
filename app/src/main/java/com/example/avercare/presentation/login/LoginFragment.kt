@@ -36,7 +36,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         binding.btnLogin.setOnClickListener {
             vmLogin.validateLogin()
 
-            // Terms condition check
             if (!vmLogin.termsConditionChecked) {
                 showError(resources.getString(R.string.please_agree_terms_of_service))
                 return@setOnClickListener
