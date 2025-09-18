@@ -60,15 +60,17 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val email = s.toString()
-                if(email.isEmpty()){
-                    binding.emailLayout.boxBackgroundColor = ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
+                if (email.isEmpty()) {
+                    binding.emailLayout.boxBackgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
                     binding.emailLayout.error = null // Clear error if valid
-                }
-               else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     binding.emailLayout.error = "Please enter a valid email address"
-                    binding.emailLayout.boxBackgroundColor = ContextCompat.getColor(requireContext(), R.color.dark_red_color)
+                    binding.emailLayout.boxBackgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.dark_red_color)
                 } else {
-                    binding.emailLayout.boxBackgroundColor = ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
+                    binding.emailLayout.boxBackgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
                     binding.emailLayout.error = null // Clear error if valid
                 }
             }
@@ -76,14 +78,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     }
 
     private fun initUi() {
-        setSpannableText(
-            binding.tvDontHaveAccount,
-            getString(R.string.dont_have_account),
-            getString(R.string.signup),
-            R.color.primaryColor
-        ) {
-            findNavController().navigate(R.id.action_login_to_signup)
-    private fun initUI() {
         binding.tvDontHaveAccount.makeTextLink(
             resources.getString(R.string.signup),
             false,

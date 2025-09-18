@@ -35,7 +35,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
         manageObservers()
     }
 
-    private fun initUI() {
+    private fun initUi() {
         binding.tvPrivacyTerms.makeTextLink(
             resources.getString(R.string.terms_of_service),
             false,
