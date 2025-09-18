@@ -4,103 +4,114 @@
 
     <data>
 
+        <variable
+            name="vmLogin"
+            type="com.example.avercare.presentation.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/scroll_main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/app_bg"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/tv_dont_have_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ScrollView
-                android:id="@+id/scroll_main"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:fillViewport="true"
-                android:layout_marginTop="@dimen/_32sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
-                android:layout_marginHorizontal="@dimen/_16sdp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/tv_dont_have_account">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:cardElevation="@dimen/_4sdp"
-                    app:cardBackgroundColor="@color/dark_grey_color">
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/dark_grey_color"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_16sdp"
                     android:layout_marginHorizontal="@dimen/_12sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginVertical="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_logo"
                         android:layout_width="@dimen/_70sdp"
-                        android:src="@drawable/ic_logo"
                         android:layout_height="@dimen/_70sdp"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/ic_logo"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_main_heading"
                         style="@style/TvFontSemibold"
-                        android:textSize="@dimen/_16ssp"
                         android:layout_marginTop="@dimen/_20sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/img_logo"
-                        app:layout_constraintStart_toStartOf="@id/img_logo"
+                        android:text="@string/welcome_back"
+                        android:textSize="@dimen/_16ssp"
                         app:layout_constraintEnd_toEndOf="@id/img_logo"
-                        android:text="@string/welcome_back"/>
+                        app:layout_constraintStart_toStartOf="@id/img_logo"
+                        app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_sub_heading"
                         style="@style/customTextView"
                         android:layout_marginHorizontal="@dimen/_40sdp"
                         android:layout_marginTop="@dimen/_5sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_main_heading"
-                        app:layout_constraintStart_toStartOf="@id/tv_main_heading"
+                        android:text="@string/signing_to_your_account"
                         app:layout_constraintEnd_toEndOf="@id/tv_main_heading"
-                        android:text="@string/signing_to_your_account"/>
+                        app:layout_constraintStart_toStartOf="@id/tv_main_heading"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_main_heading" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_email"
                         style="@style/TvFontSemibold"
                         android:textColor="@color/blue_grey_light"
                         android:layout_marginTop="@dimen/_20sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading"
+                        android:text="@string/email"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:text="@string/email"/>
+                        app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/email_layout"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_email"
-                        app:layout_constraintStart_toStartOf="@id/tv_email"
-                        app:layout_constraintEnd_toEndOf="parent"
                         style="@style/Widget.MyApp.TextInputLayout"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        app:errorEnabled="true"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:errorEnabled="true"
+                        app:boxErrorState="@{vmLogin.emailHasError}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_email"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_email">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="@dimen/_10sdp"
+                            android:afterTextChanged="@{(text) -> vmLogin.onEmailChanged(text)}"
                             android:hint="@string/email"
                             android:textColor="@color/light_grey_blue"
                             android:textColorHint="@color/light_grey_blue"
                             android:inputType="textEmailAddress"
                             android:singleLine="true"/>
+                            android:maxLines="1"
+                            android:textSize="@dimen/_11ssp"
+                            android:fontFamily="@font/inter_medium"
+                            android:inputType="textEmailAddress"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:textColor="@color/primaryEtTextColor"
+                            android:textColorHint="@color/primaryEtTextColor" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,30 +121,42 @@
                         android:textSize="@dimen/_12ssp"
                         android:textColor="@color/blue_grey_light"
                         app:layout_constraintTop_toBottomOf="@+id/email_layout"
+                        android:text="@string/password"
+                        android:textColor="@color/secondaryTextColor"
+                        android:textSize="@dimen/_12ssp"
                         app:layout_constraintStart_toStartOf="@id/email_layout"
-                        android:text="@string/password"/>
+                        app:layout_constraintTop_toBottomOf="@+id/email_layout" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/password_layout"
+                        style="@style/Widget.MyApp.TextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.MyApp.TextInputLayout"
-                        app:endIconMode="password_toggle"
-                        android:text="@string/password"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleDrawable="@drawable/password_selector"
                         android:layout_marginTop="@dimen/_5sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                        android:text="@string/password"
+                        app:endIconMode="password_toggle"
+                        app:errorEnabled="true"
+                        app:boxErrorState="@{vmLogin.passwordHasError}"
+                        app:layout_constraintEnd_toEndOf="@id/email_layout"
                         app:layout_constraintStart_toStartOf="@id/tv_password"
-                        app:layout_constraintEnd_toEndOf="@id/email_layout">
+                        app:layout_constraintTop_toBottomOf="@+id/tv_password"
+                        app:passwordToggleDrawable="@drawable/password_selector"
+                        app:passwordToggleEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_password"
-                            style="@style/customTextInputEt"
-                            android:hint="@string/password"
-                            android:textSize="@dimen/_11ssp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:afterTextChanged="@{(text) -> vmLogin.onPasswordChanged(text)}"
                             android:fontFamily="@font/inter_medium"
-                            android:inputType="textPassword"/>
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:maxLength="20"
+                            android:paddingVertical="@dimen/_10sdp"
+                            android:textColor="@color/primaryEtTextColor"
+                            android:textColorHint="@color/primaryEtTextColor"
+                            android:textSize="@dimen/_11ssp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,17 +166,21 @@
                         android:textColor="@color/blue_grey_light"
                         android:layout_marginTop="@dimen/_6sdp"
                         app:layout_constraintTop_toBottomOf="@+id/password_layout"
+                        android:text="@string/forgot_password"
+                        android:textColor="@color/secondaryTextColor"
                         app:layout_constraintEnd_toEndOf="@id/email_layout"
-                        android:text="@string/forgot_password"/>
+                        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
 
                     <androidx.appcompat.widget.AppCompatCheckBox
-                        android:id="@+id/checkBox_agree"
+                        android:id="@+id/cb_terms_privacy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_16sdp"
                         android:minHeight="0dp"
                         android:minWidth="0dp"
                         android:button="@drawable/checkbox_wrapper"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:checked="@={vmLogin.termsConditionChecked}"
+                        android:onCheckedChanged="@{vmLogin::isTermsConditionChecked}"
                         app:layout_constraintStart_toStartOf="@id/password_layout"
                         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
 
@@ -162,6 +189,7 @@
                         style="@style/TvFontRegular"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
                         android:layout_marginStart="@dimen/_4sdp"
                         android:textColor="@color/steel_blue_grey"
                         android:fontFamily="@font/inter_regular"
@@ -171,24 +199,29 @@
                         app:layout_constraintEnd_toEndOf="@id/tv_forgot_password"
                         app:layout_constraintStart_toEndOf="@+id/checkBox_agree"
                         app:layout_constraintTop_toTopOf="@+id/checkBox_agree" />
+                        app:layout_constraintBottom_toBottomOf="@+id/cb_terms_privacy"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cb_terms_privacy"
+                        app:layout_constraintTop_toTopOf="@+id/cb_terms_privacy" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_btn_layout"
+                        android:id="@+id/btn_login"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_16sdp"
                         android:background="@drawable/common_btn_bg"
+                        app:enabledAlpha="@{vmLogin.isFormValid}"
                         app:layout_constraintEnd_toEndOf="@+id/password_layout"
                         app:layout_constraintStart_toStartOf="@+id/password_layout"
                         app:layout_constraintTop_toBottomOf="@+id/tv_privacy_terms">
 
                         <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/btn_submit"
+                            android:id="@+id/tv_login"
                             style="@style/buttonWithArrow"
                             android:text="@string/log_in"
-                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"/>
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -197,41 +230,42 @@
                         style="@style/TvFontMedium"
                         android:textColor="@color/blue_grey_light"
                         android:layout_marginTop="@dimen/_24sdp"
-                        app:layout_constraintStart_toStartOf="@+id/cl_btn_layout"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout"
-                        app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
-                        android:text="@string/try_another_mfa_method"/>
+                        android:text="@string/try_another_mfa_method"
+                        android:textColor="@color/secondaryTextColor"
+                        app:layout_constraintEnd_toEndOf="@id/btn_login"
+                        app:layout_constraintStart_toStartOf="@+id/btn_login"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
                     <View
                         android:id="@+id/view_sep_before"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_24sdp"
                         android:background="@color/midnight_blue"
                         app:layout_constraintEnd_toStartOf="@+id/tv_or"
-                        app:layout_constraintStart_toStartOf="@id/cl_btn_layout"
-                        android:layout_marginTop="@dimen/_24sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_mfa_verify"/>
+                        app:layout_constraintStart_toStartOf="@id/btn_login"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_mfa_verify" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv_or"
                         style="@style/customTextView"
-                        android:textSize="@dimen/_9sdp"
                         android:paddingHorizontal="@dimen/_15sdp"
+                        android:text="@string/or"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_sep_before"
                         app:layout_constraintEnd_toStartOf="@+id/view_sep_after"
                         app:layout_constraintStart_toEndOf="@+id/view_sep_before"
-                        app:layout_constraintTop_toTopOf="@id/view_sep_before"
-                        app:layout_constraintBottom_toBottomOf="@+id/view_sep_before"
-                        android:text="@string/or"/>
+                        app:layout_constraintTop_toTopOf="@id/view_sep_before" />
 
                     <View
                         android:id="@+id/view_sep_after"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_1sdp"
-                        android:background="@color/midnight_blue"
-                        app:layout_constraintStart_toEndOf="@+id/tv_or"
-                        app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
                         android:layout_marginTop="@dimen/_24sdp"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_mfa_verify"/>
+                        android:background="@color/midnight_blue"
+                        app:layout_constraintEnd_toEndOf="@id/btn_login"
+                        app:layout_constraintStart_toEndOf="@+id/tv_or"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_mfa_verify" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -239,8 +273,8 @@
                         android:layout_marginVertical="@dimen/_24sdp"
                         android:background="@drawable/common_btn_black_bg"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@id/cl_btn_layout"
-                        app:layout_constraintStart_toStartOf="@id/cl_btn_layout"
+                        app:layout_constraintEnd_toEndOf="@id/btn_login"
+                        app:layout_constraintStart_toStartOf="@id/btn_login"
                         app:layout_constraintTop_toBottomOf="@+id/tv_or">
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -256,9 +290,9 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </com.google.android.material.card.MaterialCardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            </ScrollView>
+        </ScrollView>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -271,6 +305,6 @@
                 android:text="@string/dont_have_account"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

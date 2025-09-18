@@ -26,7 +26,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.viewModel = vmSignUp
+        binding.vmSignUp = vmSignUp
         initUi()
         setClick()
         manageObservers()
