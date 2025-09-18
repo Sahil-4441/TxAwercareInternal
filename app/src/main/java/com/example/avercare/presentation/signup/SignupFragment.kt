@@ -7,14 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.core.content.ContextCompat
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentSignupBinding
-import com.example.avercare.core.util.setSpannableText
-import com.example.avercare.data.remote.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -29,7 +26,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.viewModel = vmSignUp
+        binding.vmSignUp = vmSignUp
         initUi()
         setClick()
         manageObservers()

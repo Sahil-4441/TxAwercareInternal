@@ -14,10 +14,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
+import com.example.avercare.core.util.Field
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -29,20 +31,28 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.vmLogin = vmLogin
+        binding.lifecycleOwner = viewLifecycleOwner
         initUi()
         setClick()
         manageObservers()
     }
 
     private fun setClick() {
-        binding.btnSubmit.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
-            lifecycleScope.launch {
-                vmLogin.validateLogin(
-                    email,
-                    password
-                )
+        binding.btnLogin.setOnClickListener {
+            vmLogin.validateLogin()
+
+            // Terms condition check
+            if (!vmLogin.termsConditionChecked) {
+               showError(resources.getString(R.string.please_agree_terms_of_service))
+                return@setOnClickListener
+            }
+
+            if (vmLogin.isFormValid.value) {
+                val email = vmLogin.email.value
+                val password = vmLogin.password.value
+                showError("Email: $email\nPassword: $password")
+                // Navigate to next screen
             }
         }
 
@@ -50,31 +60,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPassword())
         }
 
-        // added for testing purpose only
-        binding.etEmail.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val email = s.toString()
-                if (email.isEmpty()) {
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
-                    binding.emailLayout.error = null // Clear error if valid
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    binding.emailLayout.error = "Please enter a valid email address"
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.dark_red_color)
-                } else {
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
-                    binding.emailLayout.error = null // Clear error if valid
-                }
-            }
-        })
     }
 
     private fun initUi() {
@@ -120,29 +105,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     private fun manageObservers() {
         viewLifecycleOwner.lifecycleScope.launch {
-            /*     vmLogin.authState.collectLatest { state ->
-                     when (state) {
-                         is Resource.Idle -> {
-                             hideLoading()
-                         }
-                         is Resource.Loading -> {
-                             showLoading()
-                         }
-                         is Resource.Success -> {
-                             hideLoading()
-                             findNavController().popBackStack()
-                         }
-                         is Resource.Error -> {
-                             hideLoading()
-                             showError(state.message)
-                         }
-                     }
-                 }*/
-        }
+            vmLogin.validationError.collect { error ->
+                when (error?.first) {
+                    Field.EMAIL -> binding.emailLayout.error = getString(error.second)
+                    Field.PASSWORD -> binding.passwordLayout.error = getString(error.second)
+                    null -> {
+                        binding.emailLayout.error = null
+                        binding.passwordLayout.error = null
+                    }
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            vmLogin.validationError.collectLatest { errorResId ->
-                showError(getString(errorResId))
+                }
             }
         }
     }
