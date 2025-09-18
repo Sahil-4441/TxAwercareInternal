@@ -50,31 +50,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPassword())
         }
 
-        // added for testing purpose only
-        binding.etEmail.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val email = s.toString()
-                if (email.isEmpty()) {
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
-                    binding.emailLayout.error = null // Clear error if valid
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    binding.emailLayout.error = "Please enter a valid email address"
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.dark_red_color)
-                } else {
-                    binding.emailLayout.boxBackgroundColor =
-                        ContextCompat.getColor(requireContext(), R.color.secondary_dark_grey)
-                    binding.emailLayout.error = null // Clear error if valid
-                }
-            }
-        })
     }
 
     private fun initUi() {
@@ -92,6 +67,19 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             }
         )
 
+
+        binding.tvMfaVerify.makeTextLink(
+            resources.getString(R.string.try_another_mfa_method),
+            true,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.white
+            ),
+            action = {
+
+            }
+        )
+
         binding.tvMfaVerify.makeTextLink(
             resources.getString(R.string.mfa_verification),
             false,
@@ -104,12 +92,24 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
             }
         )
 
-        binding.tvMfaVerify.makeTextLink(
-            resources.getString(R.string.try_another_mfa_method),
-            true,
+        binding.tvPrivacyTerms.makeTextLink(
+            resources.getString(R.string.terms_of_service),
+            false,
             ContextCompat.getColor(
                 requireContext(),
-                R.color.white
+                R.color.primaryColor
+            ),
+            action = {
+
+            }
+        )
+
+        binding.tvPrivacyTerms.makeTextLink(
+            resources.getString(R.string.privacy_policy),
+            false,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
             ),
             action = {
 

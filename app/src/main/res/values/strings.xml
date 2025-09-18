@@ -64,5 +64,8 @@
     <string name="try_another_mfa_method">Try Another MFA Verification Method</string>
     <string name="mfa_verification">MFA Verification</string>
     <string name="terms_and_service">I agree to the Terms of Service and Privacy Policy.</string>
-
+    <string name="consent_health_info">I consent to AverCare processing my health-related information to deliver and enhance the services.</string>
+    <string name="consent_health_info_sharing">I consent to AverCare sharing my health-related information with [Providers/Partners] for care coordination and service delivery.</string>
+    <string name="consent_privacy_telehealth">I acknowledge receiving the Notice of Privacy Practices (HIPAA) and consent to receive care via telehealth, including associated limitations and privacy implications.</string>
+    <string name="secure_account_with_mfa_method">Secure Your Account With MFA Verification</string>
 </resources>

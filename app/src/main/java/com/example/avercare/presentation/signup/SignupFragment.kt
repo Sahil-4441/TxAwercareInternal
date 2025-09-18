@@ -1,20 +1,17 @@
 package com.example.avercare.presentation.signup
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentSignupBinding
-import com.example.avercare.core.util.setSpannableText
-import com.example.avercare.data.remote.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -65,8 +62,30 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
                 R.color.primaryColor
             ),
             action = {
+                findNavController().navigate(SignupFragmentDirections.actionSignupToLogin())
+            })
+
+        binding.tvSecureAccountMfa.makeTextLink(
+            resources.getString(R.string.secure_account_with_mfa_method),
+            true,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.white
+            ),
+            action = {
 
             })
+        binding.tvSecureAccountMfa.makeTextLink(
+            resources.getString(R.string.mfa_verification),
+            true,
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.primaryColor
+            ),
+            action = {
+
+            })
+
 
     }
 
@@ -83,6 +102,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
                 )
             }
         }
+
     }
 
     private fun manageObservers() {

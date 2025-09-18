@@ -70,7 +70,7 @@
                     style="@style/TvFontSemibold"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:text="@string/email"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/blue_grey_light"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading" />
 
@@ -88,7 +88,7 @@
                     style="@style/TvFontSemibold"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="@string/password"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/blue_grey_light"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/et_email" />
@@ -101,9 +101,9 @@
                     android:text="@string/password"
                     app:boxBackgroundMode="none"
                     app:endIconMode="password_toggle"
-                    app:helperTextTextColor="@color/primaryEtTextColor"
+                    app:helperTextTextColor="@color/light_grey_blue"
                     app:hintEnabled="false"
-                    app:hintTextColor="@color/primaryEtTextColor"
+                    app:hintTextColor="@color/light_grey_blue"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/tv_password"
                     app:layout_constraintTop_toBottomOf="@+id/tv_password"
@@ -126,7 +126,7 @@
                     style="@style/TvFontSemibold"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:text="@string/forgot_password"
-                    android:textColor="@color/secondaryTextColor"
+                    android:textColor="@color/blue_grey_light"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/password_layout" />
@@ -212,7 +212,7 @@
             style="@style/customTextView"
             android:layout_marginBottom="@dimen/_16sdp"
             android:text="@string/dont_have_account"
-            android:textColor="@color/secondaryTextColor"
+            android:textColor="@color/blue_grey_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

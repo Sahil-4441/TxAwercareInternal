@@ -8,8 +8,8 @@
     <color name="secondaryLightColor">#FFFFFF</color>
     <color name="secondaryDarkColor">#FFFFFF</color>
     <color name="primaryTextColor">#FFFFFF</color>
-    <color name="secondaryTextColor">#A6B5C5</color>
-    <color name="primaryEtTextColor">#ADAEBC</color>
+    <color name="blue_grey_light">#A6B5C5</color>
+    <color name="light_grey_blue">#ADAEBC</color>
 
 
     <color name="purple_200">#5940E2</color>
@@ -31,6 +31,6 @@
     <color name="dark_blue_gray">#25384B</color>
     <color name="red_light_color">#FF7073</color>
     <color name="dark_red_color">#310B12</color>
-
+    <color name="steel_blue_grey">#546379</color>
 
 </resources>

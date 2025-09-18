@@ -72,7 +72,7 @@
                 style="@style/customTextView"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/already_have_account"
-                android:textColor="@color/secondaryTextColor"
+                android:textColor="@color/blue_grey_light"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_btn_layout" />
