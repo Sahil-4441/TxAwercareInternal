@@ -1,7 +1,10 @@
 package com.example.avercare.core.util
 
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Paint
+import android.os.Build
 import android.text.Editable
 import android.text.SpannableString
 import android.text.Spanned
@@ -10,6 +13,7 @@ import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
+import android.text.style.ReplacementSpan
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -71,10 +75,12 @@ fun TextView.makeTextLink(
     str: String,
     underlined: Boolean,
     color: Int?,
+    underlineColor: Int? = null,
     action: (() -> Unit)? = null
 ) {
     val spannableString = SpannableString(text)
     val textColor = color ?: currentTextColor
+
     val clickableSpan = object : ClickableSpan() {
         override fun onClick(textView: View) {
             action?.invoke()
@@ -82,17 +88,67 @@ fun TextView.makeTextLink(
 
         override fun updateDrawState(drawState: TextPaint) {
             super.updateDrawState(drawState)
-            drawState.isUnderlineText = underlined
             drawState.color = textColor
+            drawState.isUnderlineText = false // disable default underline
         }
     }
+
+    // Custom underline span
+    val underlineSpan = object : ReplacementSpan() {
+        override fun getSize(
+            paint: Paint,
+            text: CharSequence,
+            start: Int,
+            end: Int,
+            fm: Paint.FontMetricsInt?
+        ): Int {
+            return paint.measureText(text, start, end).toInt()
+        }
+
+        override fun draw(
+            canvas: Canvas,
+            text: CharSequence,
+            start: Int,
+            end: Int,
+            x: Float,
+            top: Int,
+            y: Int,
+            bottom: Int,
+            paint: Paint
+        ) {
+            val textStr = text.subSequence(start, end).toString()
+            paint.color = textColor
+            canvas.drawText(textStr, x, y.toFloat(), paint)
+
+            if (underlined) {
+                val underlinePaint = Paint(paint)
+                underlinePaint.style = Paint.Style.STROKE
+                underlinePaint.strokeWidth = 2f
+                underlinePaint.color = underlineColor ?: textColor
+
+                val textWidth = paint.measureText(textStr)
+                val underlineY = y + 6f
+                canvas.drawLine(x, underlineY, x + textWidth, underlineY, underlinePaint)
+            }
+        }
+    }
+
     val index = spannableString.indexOf(str)
-    spannableString.setSpan(
-        clickableSpan,
-        index,
-        index + str.length,
-        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-    )
+    if (index != -1) {
+        spannableString.setSpan(
+            clickableSpan,
+            index,
+            index + str.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        spannableString.setSpan(
+            underlineSpan,
+            index,
+            index + str.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+    }
+
     text = spannableString
     movementMethod = LinkMovementMethod.getInstance()
     highlightColor = Color.TRANSPARENT

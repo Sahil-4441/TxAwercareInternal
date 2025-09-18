@@ -15,7 +15,7 @@ fun bindImageFromResource(imageView: ImageView, resourceId: Int?) {
 }
 @BindingAdapter("app:enabledAlpha")
 fun setEnabledAlpha(view: View, isEnabled: Boolean) {
-    view.alpha = if (isEnabled) 1f else 0.5f
+    view.alpha = if (isEnabled) 1f else 0.6f
     view.isClickable = isEnabled
 }
 

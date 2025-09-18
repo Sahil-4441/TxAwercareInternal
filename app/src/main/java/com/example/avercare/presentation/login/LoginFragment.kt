@@ -85,11 +85,12 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
         binding.tvMfaVerify.makeTextLink(
             resources.getString(R.string.mfa_verification),
-            false,
+            true,
             ContextCompat.getColor(
                 requireContext(),
                 R.color.primaryColor
             ),
+            underlineColor = ContextCompat.getColor(requireContext(), R.color.white),
             action = {
 
             }

@@ -85,6 +85,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
                 requireContext(),
                 R.color.primaryColor
             ),
+            underlineColor = ContextCompat.getColor(requireContext(), R.color.white),
             action = {
 
             })
