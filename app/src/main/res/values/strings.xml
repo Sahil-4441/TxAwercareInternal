@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AndroidCleanArchMVVM_Gson</string>
     <string name="loading">Loading…</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splash">Splash</string>
     <string name="create_your_avercare_account">Create your AverCare account</string>
@@ -68,4 +68,5 @@
     <string name="consent_health_info_sharing">I consent to AverCare sharing my health-related information with [Providers/Partners] for care coordination and service delivery.</string>
     <string name="consent_privacy_telehealth">I acknowledge receiving the Notice of Privacy Practices (HIPAA) and consent to receive care via telehealth, including associated limitations and privacy implications.</string>
     <string name="secure_account_with_mfa_method">Secure Your Account With MFA Verification</string>
+    <string name="continue_text">Continue</string>
 </resources>
