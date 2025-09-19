@@ -166,7 +166,7 @@
                         style="@style/TvFontRegular"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginStart="@dimen/_6sdp"
                         android:textColor="@color/steel_blue_grey"
                         android:text="@string/terms_and_service"
                         android:textSize="@dimen/_10ssp"

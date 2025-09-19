@@ -10,16 +10,14 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
-import com.example.avercare.core.util.LoginField
 import com.example.avercare.core.util.SignupField
 import com.example.avercare.core.util.makeTextLink
 import com.example.avercare.databinding.FragmentSignupBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SignupFragment : BaseFragment<FragmentSignupBinding>() {
+class SignUpFragment : BaseFragment<FragmentSignupBinding>() {
 
     private val vmSignUp: SignUpViewModel by viewModels()
 
@@ -65,7 +63,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding>() {
                 R.color.primaryColor
             ),
             action = {
-                findNavController().navigate(SignupFragmentDirections.actionSignupToLogin())
+                findNavController().navigate(SignUpFragmentDirections.actionSignupToLogin())
             })
 
         binding.tvSecureAccountMfa.makeTextLink(

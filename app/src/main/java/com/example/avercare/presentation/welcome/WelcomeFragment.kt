@@ -1,4 +1,4 @@
-package com.example.avercare.presentation.letstart
+package com.example.avercare.presentation.welcome
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,14 +9,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.avercare.R
 import com.example.avercare.core.base.BaseFragment
 import com.example.avercare.core.util.makeTextLink
-import com.example.avercare.databinding.FragmentLetStartBinding
+import com.example.avercare.databinding.FragmentWelcomeBinding
 
-class LetStartFragment : BaseFragment<FragmentLetStartBinding>() {
+class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>() {
 
     override fun inflateBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentLetStartBinding = FragmentLetStartBinding.inflate(inflater, container, false)
+    ): FragmentWelcomeBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,7 +34,7 @@ class LetStartFragment : BaseFragment<FragmentLetStartBinding>() {
             ),
             action = {
                 findNavController().navigate(
-                    LetStartFragmentDirections.actionOnBoardingFragmentToLoginFragment()
+                    WelcomeFragmentDirections.actionWelcomeFragmentToLoginFragment()
                 )
             }
         )
@@ -42,7 +42,7 @@ class LetStartFragment : BaseFragment<FragmentLetStartBinding>() {
 
     private fun clickListeners() {
         binding.btnStart.setOnClickListener {
-            findNavController().navigate(LetStartFragmentDirections.actionOnBoardingToSignup())
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToSignUpFragment())
         }
     }
 

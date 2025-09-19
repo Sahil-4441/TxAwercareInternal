@@ -3,27 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
-        android:id="@+id/onBoardingFragment"
-        android:name="com.example.avercare.presentation.letstart.LetStartFragment"
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.avercare.presentation.welcome.WelcomeFragment"
         android:label="OnBoardingFragment"
-        tools:layout="@layout/fragment_let_start">
+        tools:layout="@layout/fragment_welcome">
+
         <action
-            android:id="@+id/action_onBoardingFragment_to_loginFragment"
+            android:id="@+id/action_welcomeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_onBoarding_to_signup"
-            app:destination="@id/signupFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -33,14 +34,16 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_signup"
-            app:destination="@id/signupFragment"
+            app:destination="@id/signUpFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginFragment_to_forgotPassword"
-            app:destination="@id/forgotPassword"
+            app:destination="@id/forgotPasswordFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -48,8 +51,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.avercare.presentation.signup.SignupFragment"
+        android:id="@+id/signUpFragment"
+        android:name="com.example.avercare.presentation.signup.SignUpFragment"
         android:label="Sign Up"
         tools:layout="@layout/fragment_signup">
         <action
@@ -58,11 +61,23 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/signUpFragment"
+            />
     </fragment>
 
     <fragment
-        android:id="@+id/forgotPassword"
+        android:id="@+id/forgotPasswordFragment"
         android:name="com.example.avercare.presentation.forgotpasswod.ForgotPassword"
         android:label="ForgotPassword"
         tools:layout="@layout/fragment_forgot_password">
@@ -72,14 +87,26 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/forgotPasswordFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.example.avercare.presentation.resetpassword.ResetPasswordFragment"
         android:label="ResetPasswordFragment"
-        tools:layout="@layout/fragment_reset_password" />
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/forgotPasswordFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/verificationFragment"

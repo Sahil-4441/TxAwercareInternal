@@ -54,7 +54,6 @@ class VerifyOtpFragment : BaseFragment<FragmentVerifyOtpBinding>() {
             } else {
                 //Otp is valid
             }
-
         }
 
     }
