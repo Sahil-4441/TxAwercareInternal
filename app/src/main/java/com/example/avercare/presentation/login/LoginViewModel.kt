@@ -27,10 +27,8 @@ class LoginViewModel @Inject constructor(
     val loginState: StateFlow<Resource<User>> = _loginState
     private val _email = MutableStateFlow("")
     val email: StateFlow<String> = _email
-
     private val _password = MutableStateFlow("")
     val password: StateFlow<String> = _password
-
     private val _validationError = MutableStateFlow<Pair<LoginField, Int>?>(null)
     val validationError: StateFlow<Pair<LoginField, Int>?> = _validationError
 

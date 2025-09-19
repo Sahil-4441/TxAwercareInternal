@@ -63,7 +63,7 @@
 
     <fragment
         android:id="@+id/forgotPassword"
-        android:name="com.example.avercare.presentation.forgotpasswod.ForgotPassword"
+        android:name="com.example.avercare.presentation.forgotpassword.ForgotPassword"
         android:label="ForgotPassword"
         tools:layout="@layout/fragment_forgot_password">
         <action

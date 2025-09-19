@@ -10,3 +10,11 @@ enum class SignupField {
     PASSWORD,
     CONFIRM_PASSWORD
 }
+
+enum class ForgotPasswordField {
+    EMAIL
+}
+enum class ResetPasswordField {
+    PASSWORD,
+    CONFIRM_PASSWORD
+}
